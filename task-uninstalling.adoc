@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: task-uninstalling.html 
+keywords: uninstall, uninstall data broker, remove data broker 
+summary: 如有需要、請執行解除安裝指令碼、以移除安裝資料代理程式時所建立的資料代理程式、套件和目錄。 
+---
+= 解除安裝資料代理程式
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如有需要、請執行解除安裝指令碼、以移除安裝資料代理程式時所建立的資料代理程式、以及套件和目錄。
+
+.步驟
+. 登入資料代理主機。
+. 變更至資料代理人目錄：「 /opt /NetApp/databasroker 」
+. 執行下列命令：
++
+"chmod+x uninstaller-DataBromer.sh" 、 "./uninstaller-DataBromer.sh"
+
+. 按「 y 」確認解除安裝。
+

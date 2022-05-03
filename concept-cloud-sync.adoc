@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: concept-cloud-sync.html 
+keywords: cloud sync, overview, conceptual, how, data broker, service, cloudsync 
+summary: NetApp Cloud Sync 支援服務提供簡單、安全且自動化的方式、可將您的資料移轉至雲端或內部部署的任何目標。 
+---
+= 概述 Cloud Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Cloud Sync 支援服務提供簡單、安全且自動化的方式、可將您的資料移轉至雲端或內部部署的任何目標。無論是檔案型 NAS 資料集（ NFS 或 SMB ）、 Amazon Simple Storage Service （ S3 ）物件格式、 NetApp StorageGRID S還原 ® 應用裝置、或是任何其他雲端供應商物件存放區、 Cloud Sync 均可將其轉換並移動。
+
+
+
+== 功能
+
+觀看下列影片、瞭解 Cloud Sync 有關下列功能的概述：
+
+video::oZNJtLvgNfQ[youtube, width=848,height=480]
+
+
+== 運作原理 Cloud Sync
+
+VMware是軟體即服務（SaaS）平台、由資料代理商群組、雲端型介面（可透過Cloud Manager取得）、以及來源與目標組成。Cloud Sync
+
+下圖顯示 Cloud Sync 了各個元件之間的關係：
+
+image:diagram_cloud_sync_overview.gif["顯示資料從來源流向目標的概念性映像。資料代理軟體扮演中介角色、輪詢 Cloud Sync 功能以瞭如任務所需。"]
+
+NetApp 資料代理軟體會將資料從來源同步至目標（這稱為 _sync 關係 _ ）。您可以在 AWS 、 Azure 、 Google Cloud Platform 或內部部署環境中執行資料代理程式。由一或多個資料代理人所組成的資料代理人群組、需要透過連接埠443建立傳出網際網路連線、以便與Cloud Sync 該服務進行通訊、並聯絡其他服務與儲存庫。 link:reference-networking.html["檢視端點清單"]。
+
+初始複本之後、服務會根據您設定的排程同步任何變更的資料。
+
+
+
+== 支援的儲存類型
+
+支援下列儲存類型： Cloud Sync
+
+* 任何 NFS 伺服器
+* 任何 SMB 伺服器
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Box（可預覽）
+* Cloud Volumes Service
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* 內部部署 ONTAP 的叢集
+* SS3 儲存設備 ONTAP
+* SFTP（僅使用API）
+* StorageGRID
+
+
+link:reference-supported-relationships.html["檢視支援的同步關係"]。
+
+
+
+== 成本
+
+有兩種成本與 Cloud Sync 使用效益有關：資源費用和服務費用。
+
+資源費用:: 資源費用與在雲端執行一或多個資料代理人的運算和儲存成本有關。
+服務費用:: 在您的 14 天免費試用結束後、有兩種方式可以支付同步關係的費用。第一個選項是向 AWS 或 Azure 訂閱、這可讓您每小時或每年付費。第二種選擇是直接向 NetApp 購買授權。
+
+
+link:concept-licensing.html["瞭解授權的運作方式"]。

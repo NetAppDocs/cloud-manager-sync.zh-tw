@@ -1,0 +1,434 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, enhancements, fixes' 
+summary: 瞭Cloud Sync 解更新功能。 
+---
+= 更新功能Cloud Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+瞭Cloud Sync 解更新功能。
+
+
+
+== 2022年5月1日
+
+
+
+=== 同步逾時
+
+現在有一項新的*同步逾時*設定可供同步關係使用。此設定可讓您定義Cloud Sync 當同步尚未在指定的時數或天數內完成時、是否應取消資料同步。
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-relationships.html#changing-the-settings-for-a-sync-relationship["深入瞭解如何變更同步關係的設定"]。
+
+
+
+=== 通知
+
+現在有一項新的*通知*設定可供同步關係使用。此設定可讓您選擇是否要在Cloud Sync Cloud Manager的通知中心接收功能不全的通知。您可以啟用通知、以便成功同步資料、同步失敗資料及取消資料同步。
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-notification-center.png["顯示Cloud Manager通知中心的快照。"]
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-relationships.html#changing-the-settings-for-a-sync-relationship["深入瞭解如何變更同步關係的設定"]。
+
+
+
+== 2022年4月3日
+
+
+
+=== 資料代理群組增強功能
+
+我們對資料代理商群組進行了多項增強：
+
+* 您現在可以將資料代理程式移至新的或現有的群組。
+* 您現在可以更新資料代理程式的Proxy組態。
+* 最後、您也可以刪除資料代理人群組。
+
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-data-brokers.html["瞭解如何管理資料代理人群組"]。
+
+
+
+=== 儀表板篩選器
+
+您現在可以篩選「同步儀表板」的內容、更輕鬆地找到符合特定狀態的同步關係。例如、您可以篩選狀態為「失敗」的同步關係
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-filter.png["快照顯示儀表板頂端的「依同步狀態篩選」選項。"]
+
+
+
+== 2022年3月3日
+
+
+
+=== 在儀表板中排序
+
+您現在可以依照同步關係名稱來排序儀表板。
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-sort.png["顯示儀表板可用之「排序依據名稱」選項的快照。"]
+
+
+
+=== 資料感測整合的增強功能
+
+在先前的版本中、我們推出Cloud Sync 了與Cloud Data Sense整合的功能。在此更新中、我們透過更輕鬆地建立同步關係來強化整合。從Cloud Data Sense啟動資料同步之後、所有來源資訊都會包含在單一步驟中、而且只需要輸入一些重要詳細資料即可。
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-data-sense.png["這張螢幕快照會顯示直接從Cloud Data Sense開始新同步後出現的「Data Sense Integration」（資料感測整合）頁面。"]
+
+
+
+== 2022年2月6日
+
+
+
+=== 資料代理群組的增強功能
+
+我們強調資料代理商_群組_、改變了您與資料代理人的互動方式。
+
+例如、當您建立新的同步關係時、請選取要與關係搭配使用的資料代理_群組_、而非特定的資料代理程式。
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-select-data-broker-group.png["同步關係精靈的快照、顯示資料代理群組選取項目。"]
+
+在*管理資料代理人*索引標籤中、我們也會顯示資料代理人群組正在管理的同步關係數目。
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-sync-group-relationships.png["「管理資料代理人」頁面的快照、顯示資料代理人群組及該群組的詳細資料、包括其所管理的關係數目。"]
+
+
+
+=== 下載PDF報告
+
+您現在可以下載報告的PDF。
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-reports.html["深入瞭解報告"]。
+
+
+
+== 2022年1月2日
+
+
+
+=== 新的Box同步關係
+
+支援兩種新的同步關係：
+
+* Box to Azure NetApp Files
+* Box to Amazon FSX for ONTAP Sfx
+
+
+link:reference-supported-relationships.html["檢視支援的同步關係清單"]。
+
+
+
+=== 關係名稱
+
+您現在可以為每個同步關係提供有意義的名稱、以便更輕鬆地識別每個關係的目的。您可以在建立關聯時新增名稱、也可以在之後的任何時間新增。
+
+image:screenshot-sync-relationship-edit-name.png["同步關係的快照、顯示關聯名稱旁的編輯按鈕。"]
+
+
+
+=== S3私有連結
+
+當您在Amazon S3之間或從Amazon S3同步資料時、可以選擇是否使用S3私有連結。當資料代理人將資料從來源複製到目標時、便會透過私有連結。
+
+請注意、與您的資料代理人相關聯的IAM角色需要下列權限才能使用此功能：
+
+[source, json]
+----
+"ec2:DescribeVpcEndpoints"
+----
+此權限會自動新增至您所建立的任何新資料代理人。
+
+
+
+=== Glacier即時擷取
+
+現在、當Amazon S3成為同步關係的目標時、您可以選擇_Glacier即時擷取_儲存類別。
+
+
+
+=== 從物件儲存到SMB共用的ACL
+
+目前支援將ACL從物件儲存設備複製到SMB共用區。Cloud Sync之前、我們只支援將ACL從SMB共用區複製到物件儲存區。
+
+
+
+=== SFTP至S3
+
+使用者介面現在支援從SFTP建立與Amazon S3的同步關係。此同步關係先前僅受到API支援。
+
+
+
+=== 表格檢視增強功能
+
+我們重新設計儀表板上的表格檢視、以方便使用。如果您按一下*更多資訊*、Cloud Sync 則此功能會篩選儀表板、以顯示有關該特定關係的更多資訊。
+
+image:screenshot-sync-table.png["儀表板中表格檢視的快照。"]
+
+
+
+=== 支援Jarkarta地區
+
+目前支援在AWS亞太地區（雅加達）部署資料代理商。Cloud Sync
+
+
+
+== 2021年11月28日
+
+
+
+=== 從SMB到物件儲存的ACL
+
+現在、當從來源SMB共用區設定同步關係到物件儲存（除了不包括S3）時、即可複製存取控制清單（ACL）Cloud Sync ONTAP 。
+
+不支援將ACL從物件儲存區複製到SMB共用區。Cloud Sync
+
+link:task-copying-acls.html["瞭解如何從SMB共用區複製ACL"]。
+
+
+
+=== 更新授權
+
+您現在可以更新Cloud Sync 擴充的更新版的支援。
+
+如果您延長Cloud Sync 從NetApp購買的支援對象、您可以再次新增授權、以重新更新到期日。
+
+link:task-licensing.html#update-a-license["瞭解如何更新授權"]。
+
+
+
+=== 更新Box認證資料
+
+您現在可以更新現有同步關係的Box認證資料。
+
+link:task-managing-relationships.html["瞭解如何更新認證資料"]。
+
+
+
+== 2021年10月31日
+
+
+
+=== Box支援
+
+Box支援現可在Cloud Sync 支援畫面的使用者介面中預覽。
+
+Box可以是多種同步關係類型的來源或目標。 link:reference-supported-relationships.html["檢視支援的同步關係清單"]。
+
+
+
+=== 建立日期設定
+
+當SMB伺服器為來源時、稱為「建立日期」的新同步關係設定可讓您同步在特定日期之後、特定日期之前或特定時間範圍之間建立的檔案。
+
+link:task-managing-relationships.html["深入瞭Cloud Sync 解有關功能的設定"]。
+
+
+
+== 2021年10月4日
+
+
+
+=== 額外的Box支援
+
+目前支援的其他同步關係Cloud Sync https://www.box.com/home["方塊"^] 使用Cloud Sync API時：
+
+* Amazon S3 to Box
+* IBM Cloud Object Storage to Box
+* 包裝盒StorageGRID
+* Box移轉至NFS伺服器
+* 適用於SMB伺服器
+
+
+link:api-sync.html["瞭解如何使用API設定同步關係"]。
+
+
+
+=== SFTP路徑報告
+
+您現在可以了 link:task-managing-reports.html["建立報告"] 適用於SFTP路徑。
+
+
+
+== 2021年9月2日
+
+
+
+=== 支援FSX for ONTAP Sf
+
+您現在可以將資料同步至Amazon FSX for ONTAP Sfor Sfor系統、或從Amazon FSX同步資料。
+
+* https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/concept-fsx-aws.html["深入瞭解Amazon FSX for ONTAP Sf"^]
+* link:reference-requirements.html["檢視支援的同步關係"]
+* link:task-creating-relationships.html["瞭解如何為Amazon FSX for ONTAP Synf2建立同步關係"]
+
+
+
+
+== 2021年8月1日
+
+
+
+=== 更新認證資料
+
+利用目前的支援功能、您可以在現有的同步關係中、以來源或目標的最新認證來更新資料代理程式。Cloud Sync
+
+如果您的安全性原則要求您定期更新認證資料、這項增強功能將有助於您。 link:task-managing-relationships.html["瞭解如何更新認證資料"]。
+
+image:screenshot_sync_update_credentials.png["快照顯示「同步關係」頁面上、來源或目標名稱正下方的「更新認證」選項。"]
+
+
+
+=== 物件儲存目標的標記
+
+建立同步關係時、您現在可以在同步關係中將標記新增至物件儲存目標。
+
+Amazon S3、Azure Blob、Google Cloud Storage、IBM Cloud Object Storage及StorageGRID 支援新增標記。
+
+image:screenshot_sync_tags.png["此快照顯示工作環境精靈中的頁面、可讓您將關係標記新增至關聯中的物件儲存目標。"]
+
+
+
+=== 支援Box
+
+支援的支援Cloud Sync https://www.box.com/home["方塊"^] 當使用此解決方案時、可作為與Amazon S3、StorageGRID Syn性質 及IBM Cloud Object Storage的同步關係來源Cloud Sync 。
+
+link:api-sync.html["瞭解如何使用API設定同步關係"]。
+
+
+
+=== Google Cloud資料代理商的公有IP
+
+在Google Cloud中部署資料代理程式時、您現在可以選擇啟用或停用虛擬機器執行個體的公有IP位址。
+
+link:task-installing-gcp.html["瞭解如何在Google Cloud中部署資料代理商"]。
+
+
+
+=== 雙傳輸協定Volume Azure NetApp Files 、提供更多功能
+
+當您選擇Azure NetApp Files 來源或目標Volume進行更新時、Cloud Sync 無論您選擇哪種傳輸協定來進行同步關係、現在只要顯示雙傳輸協定Volume即可。
+
+
+
+== 2021年7月7日
+
+
+
+=== S3儲存設備與Google Cloud Storage ONTAP
+
+現在、支援從使用者介面同步處理S3儲存設備與Google Cloud Storage儲存桶之間的關係。Cloud Sync ONTAP
+
+link:reference-supported-relationships.html["檢視支援的同步關係清單"]。
+
+
+
+=== 物件中繼資料標記
+
+建立同步關係並啟用設定時、即可在物件型儲存設備之間複製物件中繼資料和標記。Cloud Sync
+
+link:task-creating-relationships.html#settings["深入瞭解「複製物件」設定"]。
+
+
+
+=== 支援HashiCorp資料錯誤
+
+您現在可以設定資料代理程式、透過Google Cloud服務帳戶驗證、從外部HashiCorp Vault存取認證資料。
+
+link:task-external-vault.html["深入瞭解搭配資料代理程式使用HashiCorp Vault的相關資訊"]。
+
+
+
+=== 定義S3儲存區的標記或中繼資料
+
+設定Amazon S3儲存區的同步關係時、同步關係精靈現在可讓您定義要儲存在目標S3儲存區物件上的標記或中繼資料。
+
+標記選項先前是同步關係設定的一部分。
+
+
+
+== 2021年6月7日
+
+
+
+=== Google Cloud的儲存課程
+
+當Google Cloud Storage資源桶成為同步關係的目標時、您現在可以選擇想要使用的儲存類別。支援下列儲存類別：Cloud Sync
+
+* 標準
+* 近線
+* 冷線
+* 歸檔
+
+
+
+
+== 2021年5月2日
+
+
+
+=== 報告中的錯誤
+
+您現在可以檢視報告中的錯誤、並刪除最後一份報告或所有報告。
+
+link:task-managing-reports.html["深入瞭解如何建立及檢視報告以調整組態"]。
+
+
+
+=== 比較屬性
+
+現在每個同步關係都有一個新的*比較依據*設定可供使用。
+
+這項進階設定可讓您選擇Cloud Sync 在判斷檔案或目錄是否已變更且應重新同步時、是否應比較某些屬性。
+
+link:task-managing-relationships.html#changing-the-settings-for-a-sync-relationship["深入瞭解如何變更同步關係的設定"]。
+
+
+
+== 2021年4月11日
+
+
+
+=== 獨立Cloud Sync 式的版不使用此服務
+
+獨立Cloud Sync 式的不再使用此功能。您現在應該Cloud Sync 直接從Cloud Manager存取、因為Cloud Manager具備所有相同的功能。
+
+登入Cloud Manager之後、您可以切換至頂端的「Sync」（同步）索引標籤、檢視您的關係、就像以往一樣。
+
+
+
+=== Google Cloud會在不同專案中儲存貯體
+
+設定同步關係時、如果您提供資料代理商服務帳戶所需的權限、您可以從不同專案的Google Cloud儲存庫中進行選擇。
+
+link:task-installing-gcp.html["瞭解如何設定服務帳戶"]。
+
+
+
+=== Google Cloud Storage與S3之間的中繼資料
+
+目前、支援在Google Cloud Storage和S3供應商（AWS S3、支援、IBM Cloud Object Storage）之間複製中繼資料。Cloud Sync StorageGRID
+
+
+
+=== 重新啟動資料代理人
+
+您現在可以從Cloud Sync 功能不再需要的地方重新啟動資料代理程式。
+
+image:screenshot_sync_restart_data_broker.gif["從「管理資料代理人」頁面顯示「重新啟動資料代理人」動作的快照。"]
+
+
+
+=== 未執行最新版本時的訊息
+
+目前可識別資料代理程式何時未執行最新的軟體版本。Cloud Sync此訊息有助於確保您獲得最新的功能。
+
+image:screenshot_sync_warning.gif["在儀表板上檢視資料代理程式時顯示警告的快照。"]

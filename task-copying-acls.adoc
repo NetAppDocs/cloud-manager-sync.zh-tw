@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: task-copying-acls.html 
+keywords: permissions, access control list, acls, ntfs, cifs, smb, shares, robocopy, copy, transfer, activate, operating system, os, ram, cpu, networking, copy acls to the target 
+summary: 除了不包括在來源SMB共用區和目標SMB共用區之間、以及從來源SMB共用區複製存取控制清單（ACL）到物件儲存區（不包括在S3上）Cloud Sync ONTAP 。 
+---
+= 從SMB共用區複製ACL
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+支援將來源SMB共用區與目標SMB共用區之間的存取控制清單（ACL）複製、或從來源SMB共用區複製到物件儲存區（不包括不適用於S3）Cloud Sync ONTAP 。如有需要、您也可以選擇使用Robocopy手動保留SMB共用之間的ACL。
+
+
+NOTE: 不支援將ACL從物件儲存區複製回SMB共用區。Cloud Sync
+
+.選擇
+* <<Setting up Cloud Sync to copy ACLs from an SMB server,設定 Cloud Sync 功能以自動複製 ACL>>
+* <<Manually copying ACLs between SMB shares,在SMB共用區之間手動複製ACL>>
+
+
+
+
+== 設定Cloud Sync 支援從SMB伺服器複製ACL
+
+在建立關聯或建立關聯之後、啟用設定、即可從SMB伺服器複製ACL。
+
+此功能適用於 _any 類型的資料代理商： AWS 、 Azure 、 Google Cloud Platform 或內部資料代理商。內部資料代理程式可以執行 link:task-installing-linux.html["任何支援的作業系統"]。
+
+.建立新關係的步驟
+. 從本頁中、按一下 * 建立新同步 * 。 Cloud Sync
+. 將* SMB Server*拖放到來源、選擇SMB伺服器或物件儲存做為目標、然後按一下*繼續*。
+. 在「 * SMB 伺服器 * 」頁面上：
++
+.. 輸入新的 SMB 伺服器或選取現有的伺服器、然後按一下 * 繼續 * 。
+.. 輸入 SMB 伺服器的認證資料。
+.. 選擇 * 將存取控制清單複製到目標 * 、然後按一下 * 繼續 * 。
++
+image:screenshot_acl_support.gif["螢幕擷取畫面會顯示啟用「複製存取控制清單至目標」的選項。"]
+
+
+
+. 依照其餘的提示建立同步關係。
++
+當您將ACL從SMB複製到物件儲存設備時、可以根據目標、選擇將ACL複製到物件的標記或物件的中繼資料。對於Azure和Google Cloud Storage、只有中繼資料選項可用。
+
++
+下列螢幕擷取畫面顯示您可以選擇此步驟的範例。
+
++
+image:screenshot-sync-tags-metadata.png["複製到物件儲存設備時、同步關係精靈中第六個步驟的快照。您可以選擇將ACL儲存至物件的標記或中繼資料。"]
+
+
+
+.現有關係的步驟
+. 將游標暫留在同步關係上、然後按一下動作功能表。
+. 按一下 * 設定 * 。
+. 選取 * 將存取控制清單複製到目標 * 。
+. 按一下 * 儲存設定 * 。
+
+
+同步資料時Cloud Sync 、此功能會保留來源與目標SMB共用之間的ACL、或是從來源SMB共用區到物件儲存區的ACL。
+
+
+
+== 在SMB共用區之間手動複製ACL
+
+您可以使用 Windows Robocopy 命令、手動保留 SMB 共用區之間的 ACL 。
+
+.步驟
+. 識別擁有兩個 SMB 共用區完整存取權的 Windows 主機。
+. 如果任一端點需要驗證、請使用 * net use * 命令、從 Windows 主機連線至端點。
++
+您必須先執行此步驟、才能使用 Robocopy 。
+
+. 從這個範圍來 Cloud Sync 說、在來源與目標 SMB 共用之間建立新的關係、或是同步現有的關係。
+. 資料同步完成後、請從 Windows 主機執行下列命令、以同步處理 ACL 和擁有權：
++
+ robocopy /E /COPY:SOU /secfix [source] [target] /w:0 /r:0 /XD ~snapshots /UNILOG:”[logfilepath]
++
+_ 來源 _ 和 _ 目標 _ 都應使用 UNC 格式來指定。例如： \<server>\<share>\
+
+

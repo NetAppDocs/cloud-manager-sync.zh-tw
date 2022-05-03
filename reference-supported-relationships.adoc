@@ -1,0 +1,316 @@
+---
+sidebar: sidebar 
+permalink: reference-supported-relationships.html 
+keywords: supported sync relationships, support, supported target, supported source 
+summary: 利用此功能、您可以將資料從來源同步到目標。Cloud Sync這稱為同步關係。開始之前、您應該先瞭解支援的關係。 
+---
+= 支援的同步關係
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+利用此功能、您可以將資料從來源同步到目標。Cloud Sync這稱為同步關係。開始之前、您應該先瞭解支援的關係。
+
+[cols="20,25"]
+|===
+| 來源位置 | 支援的目標位置 
+
+
+| Amazon EFS  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| Amazon FSX for ONTAP Sf  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| Amazon S3  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* 方塊^1^
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| Azure Blob  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| Azure NetApp Files  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| 方塊^1^  a| 
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| Cloud Volumes ONTAP  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| Cloud Volumes Service  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| Google Cloud Storage  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SS3 儲存設備 ONTAP
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| IBM Cloud 物件儲存設備  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* 方塊^1^
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| NFS 伺服器  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| 內部ONTAP 使用的叢集  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| SS3 儲存設備 ONTAP  a| 
+* Google Cloud Storage
+* SMB 伺服器
+* StorageGRID
+* SS3 儲存設備 ONTAP
+
+
+
+
+| SFTP ^2^ | S3 
+
+
+| SMB 伺服器  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SS3 儲存設備 ONTAP
+* SMB 伺服器
+* StorageGRID
+
+
+
+
+| StorageGRID  a| 
+* Amazon EFS
+* Amazon FSX for ONTAP Sf
+* Amazon S3
+* Azure Blob
+* Azure NetApp Files
+* 方塊^1^
+* Cloud Volumes ONTAP
+* Cloud Volumes Service
+* Google Cloud Storage
+* IBM Cloud 物件儲存設備
+* NFS 伺服器
+* 內部部署 ONTAP 的叢集
+* SS3 儲存設備 ONTAP
+* SMB 伺服器
+* StorageGRID
+
+
+|===
+附註：
+
+. Box支援可預覽。
+. 只有使用Cloud Sync 支援與此來源/目標的同步關係、才能支援此功能。
+. 當 Blob 容器為目標時、您可以選擇特定的 Azure Blob 儲存層：
++
+** 熱儲存
+** 超酷儲存設備
+
+
+. [[storage類別]當Amazon S3為目標時、您可以選擇特定的S3儲存類別：
++
+** 標準（這是預設類別）
+** 智慧分層
+** 標準非常用存取
+** 單一區域不常用存取
+** 冰川
+** Glacier Deep 歸檔
+
+
+. 當Google Cloud Storage儲存桶成為目標時、您可以選擇特定的儲存類別：
++
+** 標準
+** 近線
+** 冷線
+** 歸檔
+
+
+

@@ -1,0 +1,111 @@
+---
+settings:
+  name: Cloud Sync
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
+sidebar:
+  entries:
+  - title: 所有Cloud Manager文件
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: 文件Cloud Sync
+    url: "/index.html"
+  - title: 版本資訊
+    entries:
+    - title: 新增功能
+      url: "/whats-new.html"
+    - title: 限制
+      url: "/reference-limitations.html"
+  - title: 開始使用
+    entries:
+    - title: 深入瞭解 Cloud Sync
+      url: "/concept-cloud-sync.html"
+    - title: 快速入門
+      url: "/task-quick-start.html"
+    - title: 檢視支援的同步關係
+      url: "/reference-supported-relationships.html"
+    - title: 準備來源和目標
+      url: "/reference-requirements.html"
+    - title: 準備網路
+      url: "/reference-networking.html"
+    - title: 安裝資料代理程式
+      entries:
+      - title: 安裝於 AWS
+        url: "/task-installing-aws.html"
+      - title: 安裝於 Azure
+        url: "/task-installing-azure.html"
+      - title: 安裝於Google Cloud
+        url: "/task-installing-gcp.html"
+      - title: 安裝在 Linux 主機上
+        url: "/task-installing-linux.html"
+  - title: 使用Cloud Sync
+    entries:
+    - title: 在來源與目標之間同步資料
+      entries:
+      - title: 建立同步關係
+        url: "/task-creating-relationships.html"
+      - title: 從SMB共用區複製ACL
+        url: "/task-copying-acls.html"
+      - title: 加密傳輸中的 NFS 資料
+        url: "/task-nfs-encryption.html"
+      - title: 使用 HashiCorp Vault 的機密資料
+        url: "/task-external-vault.html"
+    - title: 設定授權
+      url: "/task-licensing.html"
+    - title: 管理同步關係
+      url: "/task-managing-relationships.html"
+    - title: 管理資料代理人
+      url: "/task-managing-data-brokers.html"
+    - title: 檢視報告以調整組態
+      url: "/task-managing-reports.html"
+    - title: 解除安裝資料代理程式
+      url: "/task-uninstalling.html"
+  - title: 使用REST API進行自動化
+    url: "/api-sync.html"
+  - title: 概念
+    entries:
+    - title: 授權
+      url: "/concept-licensing.html"
+    - title: 資料隱私
+      url: "/concept-privacy.html"
+    - title: 常見問題集
+      url: "/faq.html"
+  - title: 知識與支援
+    entries:
+    - title: 註冊以取得支援
+      url: "/task-support-registration.html"
+    - title: 取得協助
+      url: "/task-get-help.html"
+  - title: 法律聲明
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 概述 Cloud Sync
+      url: concept-cloud-sync.html
+    - title: 快速入門
+      url: task-quick-start.html
+    - title: 常見問題集
+      url: faq.html
+  - title: 使用Cloud Sync
+    links:
+    - title: 建立同步關係
+      url: task-creating-relationships.html
+    - title: 設定授權
+      url: task-licensing.html
+    - title: 管理資料代理群組
+      url: task-managing-data-brokers.html
+  - title: 部落格社群
+    links:
+    - title: NetApp社群
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: Cloud Central部落格
+      url: https://cloud.netapp.com/blog
+    - title: 雲端網路研討會
+      url: https://cloud.netapp.com/events
+product-family: {}

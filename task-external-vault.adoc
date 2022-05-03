@@ -1,0 +1,264 @@
+---
+sidebar: sidebar 
+permalink: task-external-vault.html 
+keywords: hashicorp, vault, credentials, secrets, API 
+summary: 當您建立需要 Amazon S3 、 Azure 或 Google Cloud 認證的同步關係時、必須透過 Cloud Sync 「支援」使用者介面或 API 來指定這些認證資料。另一種方法是設定資料代理程式、以便直接從外部 HashiCorp Vault 存取認證資料。 
+---
+= 設定資料代理群組以使用外部HashiCorp Vault
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+當您建立需要 Amazon S3 、 Azure 或 Google Cloud 認證的同步關係時、必須透過 Cloud Sync 「支援」使用者介面或 API 來指定這些認證資料。另一種方法是設定資料代理人群組、以便直接從外部HashiCorp Vault存取認證（或_h秘密_）。
+
+此功能可透過 Cloud Sync 使用需取得 Amazon S3 、 Azure 或 Google Cloud 認證的同步關係之支援。
+
+[role="quick-margin-para"]
+設定URL、準備資料庫以提供認證給資料代理人群組。保存庫中機密的 URL 必須以 _Creds_ 結尾。
+
+[role="quick-margin-para"]
+修改群組中每個資料代理程式的本機組態檔、準備從外部資料保存庫擷取認證資料的資料代理群組。
+
+[role="quick-margin-para"]
+現在一切都已設定完成、您可以傳送 API 呼叫來建立同步關係、使用您的保存庫來獲取機密資料。
+
+
+
+== 準備保存庫
+
+您需要提供 Cloud Sync URL 給資料庫中的機密資料。設定這些 URL 來準備保存庫。您需要在您打算建立的同步關係中、設定每個來源和目標的認證 URL 。
+
+URL 必須設定如下：
+
+//< 路徑 >/ / < 端點傳輸協定 >Creds
+
+路徑:: 密碼的前置路徑。這可以是您唯一的任何值。
+申請 ID:: 您需要產生的要求 ID 。建立同步關係時、您必須在 API POST 要求的其中一個標頭中提供 ID 。
+端點傳輸協定:: 下列其中一項協定、如定義 https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["在 POST 關係 v2 文件中"^]： S3 、 Azure 或 GCP （每個都必須大寫）。
+建立:: URL 必須以 _Creds_ 結尾。
+
+
+
+
+==== 範例
+
+下列範例顯示了機密的 URL 。
+
+來源認證的完整 URL 和路徑範例:: \http://example.vault.com:8200/my-path/all-secrets/hb312vdasr2/S3Creds
++
+--
+如範例所示、首碼路徑為 //my-path/all-h秘密 / _ 、要求 ID 為 _hb312vdasr2 、來源端點為 S3 。
+
+--
+目標認證的完整 URL 和路徑範例:: \http://example.vault.com:8200/my-path/all-secrets/n32hcbnejk2/AZURECreds
++
+--
+首碼路徑為： //my-path/all-hcides/ _ 、要求 ID 為 _n32hcbnjk2 、目標端點為 Azure 。
+
+--
+
+
+
+
+== 準備資料代理程式群組
+
+修改群組中每個資料代理程式的本機組態檔、準備從外部資料保存庫擷取認證資料的資料代理群組。
+
+.步驟
+. SSH至群組中的資料代理程式。
+. 編輯位於 /opt/NetApp/databasroker/config 中的 local.json 檔案。
+. 將 enable 設為 * true* 、然後在 _exter-in集成 .hashicorp_ 下設定組態參數欄位、如下所示：
++
+已啟用::
++
+--
+** 有效值： true/false
+** 類型：布林值
+** 預設值：假
+** 對：資料代理人會從您自己的外部 HashiCorp Vault 取得機密
+** 假：資料代理程式會將認證資料儲存在其本機保存庫中
+
+
+--
+URL::
++
+--
+** 類型：字串
+** 值：外部保存庫的 URL
+
+
+--
+路徑::
++
+--
+** 類型：字串
+** 值：以認證資料做為密碼的前置路徑
+
+
+--
+拒絕未獲授權的::
++
+--
+** 決定您是否要資料代理程式拒絕未獲授權的外部資料庫
+** 類型：布林值
+** 預設值：假
+
+
+--
+驗證方法::
++
+--
+** 資料代理程式應使用的驗證方法、從外部資料庫存取認證資料
+** 類型：字串
+** 有效值：「AWS/IAM」/「role應用程式」/「GCP - iam」
+
+
+--
+角色名稱::
++
+--
+** 類型：字串
+** 您的角色名稱（如果您使用AWS/IAM或GCP-iam）
+
+
+--
+Sec淘汰 與 roid::
++
+--
+** 類型：字串（如果您使用 app-role ）
+
+
+--
+命名空間::
++
+--
+** 類型：字串
+** 您的命名空間（ X-Vault-Namespace 標頭（如有需要）
+
+
+--
+
+
+. 針對群組中的任何其他資料代理人重複這些步驟。
+
+
+
+
+=== AWS角色驗證範例
+
+[source, json]
+----
+{
+          “external-integrations”: {
+                  “hashicorp”: {
+                         “enabled”: true,
+                         “url”: “https://example.vault.com:8200”,
+                         “path”: ““my-path/all-secrets”,
+                         “reject-unauthorized”: false,
+                         “auth-method”: “aws-role”,
+                         “aws-role”: {
+                               “role-name”: “my-role”
+                         }
+                }
+       }
+}
+----
+
+
+=== GCP-iam驗證範例
+
+[source, json]
+----
+{
+"external-integrations": {
+    "hashicorp": {
+      "enabled": true,
+      "url": http://ip-10-20-30-55.ec2.internal:8200,
+      "path": "v1/secret",
+      "namespace": "",
+      "reject-unauthorized": true,
+      "auth-method": "gcp-iam",
+      "aws-iam": {
+        "role-name": ""
+      },
+      "app-role": {
+        "root_id": "",
+        "secret_id": ""
+      },
+"gcp-iam": {
+          "role-name": "my-iam-role"
+      }
+    }
+  }
+}
+----
+
+
+=== 使用GCP-iam驗證時設定權限
+
+如果您使用_GCP-iam_驗證方法、則資料代理程式必須具有下列GCP權限：
+
+[source, yaml]
+----
+- iam.serviceAccounts.signJwt
+----
+link:task-installing-gcp.html#permissions-required-for-the-service-account["深入瞭解資料代理商的GCP權限要求"]。
+
+
+
+== 使用資料庫中的機密建立新的同步關係
+
+現在一切都已設定完成、您可以傳送 API 呼叫來建立同步關係、使用您的保存庫來獲取機密資料。
+
+使用 Cloud Sync REST API 張貼關係。
+
+....
+Headers:
+Authorization: Bearer <user-token>
+Content-Type: application/json
+x-account-id: <accountid>
+x-netapp-external-request-id-src: request ID as part of path for source credentials
+x-netapp-external-request-id-trg: request ID as part of path for target credentials
+Body: post relationship v2 body
+....
+* 若要取得使用者權杖和 Cloud Central 帳戶 ID 、 link:api-sync.html["請參閱文件中的本頁"]。
+* 為您的貼文關係建立一個實體、 https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["請參閱第 2 版關係 API 呼叫"^]。
+
+
+
+
+=== 範例
+
+POST 要求的範例：
+
+[source, json]
+----
+url: https://api.cloudsync.netapp.com/api/relationships-v2
+headers:
+"x-account-id": "CS-SasdW"
+"x-netapp-external-request-id-src": "hb312vdasr2"
+"Content-Type": "application/json"
+"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik…"
+Body:
+{
+"dataBrokerId": "5e6e111d578dtyuu1555sa60",
+"source": {
+        "protocol": "s3",
+        "s3": {
+                "provider": "sgws",
+                "host": "1.1.1.1",
+                "port": "443",
+                "bucket": "my-source"
+     },
+"target": {
+        "protocol": "s3",
+        "s3": {
+                "bucket": "my-target-bucket"
+        }
+    }
+}
+----

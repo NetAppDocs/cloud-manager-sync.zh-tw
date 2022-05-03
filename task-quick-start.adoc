@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start.html 
+keywords: quick start, overview, deploying, getting started, get started, signing up, free trial 
+summary: 使用此功能包括幾個步驟。 Cloud Sync 
+---
+= 快速入門 Cloud Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+使用此功能包括幾個步驟。 Cloud Sync
+
+[role="quick-margin-para"]
+確認您的來源和目標是否受到支援和設定。最重要的要求是驗證資料代理群組與來源和目標位置之間的連線能力。
+
+* link:reference-supported-relationships.html["檢視支援的關係"]
+* link:reference-requirements.html["準備來源和目標"]
+
+
+[role="quick-margin-para"]
+NetApp 資料代理軟體會將資料從來源同步至目標（這稱為 _sync 關係 _ ）。您可以在 AWS 、 Azure 、 Google Cloud Platform 或內部部署環境中執行資料代理程式。由一或多個資料代理人所組成的資料代理人群組、需要透過連接埠443建立傳出網際網路連線、以便與Cloud Sync 該服務進行通訊、並聯絡其他服務與儲存庫。 link:reference-networking.html#networking-endpoints["檢視端點清單"]。
+
+[role="quick-margin-para"]
+建立同步關係時、會引導您完成安裝程序、此時您可以在雲端部署資料代理程式、或為自己的Linux主機下載安裝指令碼。Cloud Sync
+
+* link:task-installing-aws.html["檢閱 AWS 安裝"]
+* link:task-installing-azure.html["檢閱 Azure 安裝"]
+* link:task-installing-gcp.html["檢閱Google Cloud安裝"]
+* link:task-installing-linux.html["檢閱 Linux 主機安裝"]
+
+
+[role="quick-margin-para"]
+登入 https://cloudmanager.netapp.com/["Cloud Manager"^]，單擊 * Sync* （同步），然後拖放源和目標的選擇。依照提示完成設定。 link:task-creating-relationships.html["深入瞭解"]。
+
+[role="quick-margin-para"]
+從 AWS 或 Azure 訂閱、即可隨用隨付或每年付費。或直接向 NetApp 購買授權。只要前往 Cloud Sync 「授權設定」頁面即可設定。 link:task-licensing.html["深入瞭解"]。
