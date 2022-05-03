@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/api-sync.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/concept-cloud-sync.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/concept-licensing.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/concept-privacy.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/faq.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/legal-notices.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/reference-limitations.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/reference-networking.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/reference-requirements.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/reference-supported-relationships.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync//search.html</loc>
+      
+      <lastmod>2022-05-03T06:06:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-copying-acls.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-creating-relationships.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-external-vault.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-get-help.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-installing-aws.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-installing-azure.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-installing-gcp.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-installing-linux.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-licensing.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-managing-data-brokers.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-managing-relationships.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-managing-reports.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-nfs-encryption.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-quick-start.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-support-registration.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/task-uninstalling.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/zh-tw/cloud-manager-sync/whats-new.html</loc>
+      
+      <lastmod>2022-05-03T06:06:17+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
