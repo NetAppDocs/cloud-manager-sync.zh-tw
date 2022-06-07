@@ -1070,8 +1070,6 @@
   <block id="e9d1cd1913b22fd9324ade51470e79fb" category="list-text">《》-&gt;《IBM Cloud Object Storage》StorageGRID</block>
   <block id="d5467cdf0f31f137fc693f242bb4f9ed" category="list-text">IBM Cloud Object Storage -&gt; StorageGRID</block>
   <block id="4ead6076cd3ac3f5021ec4c7be28c427" category="list-text">IBM Cloud Object Storage -&gt; IBM Cloud Object Storage</block>
-  <block id="cf92849b844c61464026b83534370159" category="inline-link-macro">建立同步關係時啟用設定</block>
-  <block id="1e6c7a42798986bf930479decdfb6353" category="paragraph">您必須在這些同步關係中 <block ref="03984181b8f01cdbd96b3f54d00056a4" category="inline-link-macro-rx"></block>。</block>
   <block id="9446a98ad14416153cc4d45ab8b531bf" category="section-title">效能</block>
   <block id="d1ac9671b7bcf06bf5d1080fe70853b0" category="paragraph">下列問題與 Cloud Sync 效能不一致有關。</block>
   <block id="678b59fd02ed47602217c203bce0f237" category="section-title">同步關係的進度指標代表什麼？</block>
@@ -1303,7 +1301,6 @@
   <block id="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="paragraph"><block ref="881cb6b58f9fdb2bde0b3c90f7cbfce8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6a7470fea96bed8b75bf17e5f07e01a4" category="list-text">[[Settings]在*設定*頁面上、定義如何在目標位置同步及維護來源檔案與資料夾：</block>
   <block id="d2280a978447122c6ab7b62ac99c6588" category="list-text">啟用此選項可複製物件儲存中繼資料和標記。如果使用者變更來源上的中繼資料、Cloud Sync 則下次同步時、會將此物件複製下來、但如果使用者變更來源上的標記（而非資料本身）、Cloud Sync 則下次同步時、不會複製物件。</block>
-  <block id="87108e54d2a298427a5c439efc86720f" category="paragraph">支援複製標記的同步關係包括S3相容的端點（S3、StorageGRID S基 板或IBM Cloud Object Storage）。</block>
   <block id="06902a5661d713ae255404d1b76c3108" category="paragraph">下列任一端點之間的「雲端對雲端」關係均支援複製中繼資料：</block>
   <block id="128edc3ff8c2d69c9c76b866643314ec" category="list-text">AWS S3</block>
   <block id="1c3e0d66ceb2ba1955fa5d6c931788cd" category="list-text">如果檔案已從來源中刪除、請選擇從目標位置刪除。預設值是永遠不要從目標位置刪除檔案。</block>
@@ -1451,7 +1448,6 @@
   <block id="4caa7a774039d94c9779b6e68946536b" category="list-text">按一下動作功能表、然後選取*刪除群組*。</block>
   <block id="a6f5a3bf619c49f582460d312e4f123a" category="list-text">若要確認、請輸入群組名稱、然後按一下*刪除群組*。</block>
   <block id="33c715478bea68511b75dc844219e343" category="paragraph">此功能會移除資料代理人並刪除群組。Cloud Sync</block>
-  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有Cloud Manager文件</block>
   <block id="eab057480b500e5181f47e393918143e" category="sidebar">文件Cloud Sync</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
@@ -1484,4 +1480,31 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp社群</block>
   <block id="ff6c37cbc252e306a6b4e390ec13cbc1" category="sidebar">Cloud Central部落格</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">雲端網路研討會</block>
+  <block id="62ee9336109ed1c4538423613b856682" category="section-title">2022年6月6日</block>
+  <block id="c20246791a0594003975011a29aae438" category="section-title">持續同步</block>
+  <block id="ade9a1db23f7d605ed4e98f520c46b00" category="paragraph">新設定可讓您持續將來源S3儲存區的變更同步至目標。</block>
+  <block id="2aaa6a5839225ec7e874d5c5c1af43df" category="paragraph">初始資料同步之後Cloud Sync 、Syncset會偵聽來源S3儲存區的變更、並在目標發生時持續同步任何變更。不需要以排定的時間間隔重新掃描來源。此設定僅適用於從S3儲存區同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 不支援或IBM Storage的情況。</block>
+  <block id="969431a3ee7466b53b917ad1bc5d032a" category="paragraph">請注意、與您的資料代理人相關聯的IAM角色需要下列權限才能使用此設定：</block>
+  <block id="8817adc7e5de41abc6dded623fbb60a9" category="paragraph">這些權限會自動新增至您所建立的任何新資料代理人。</block>
+  <block id="f23841b65ba519d2dd6a63a2a3e4de83" category="inline-link-macro">深入瞭解Continuous Sync設定</block>
+  <block id="9bc62ddcbad4365043432f4afd539ab9" category="paragraph"><block ref="b78c060d9cafb1faa0c3c10254143905" category="inline-link-macro-rx"></block>。</block>
+  <block id="3d7f78f24cbebe2c601558e90c9fe15f" category="section-title">顯示所有ONTAP 的資料</block>
+  <block id="517d881d38e3ddd50495a5763ac986b4" category="paragraph">當您建立同步關係時Cloud Sync 、目前的功能就是在來源Cloud Volumes ONTAP 的支援系統上顯示所有Volume、內部部署ONTAP 的支援服務、或是在支援ONTAP 該功能的FSX檔案系統上顯示所有Volume。</block>
+  <block id="9de2181e94c0cd08ea8823917ee87c3f" category="paragraph">先前Cloud Sync 、僅顯示符合所選傳輸協定的磁碟區。現在所有的磁碟區都會顯示、但不符合所選傳輸協定或沒有共用區或匯出的任何磁碟區都會呈現灰色、而且無法選取。</block>
+  <block id="7f5581e89068d302a142aecf7d19a771" category="section-title">將標記複製到Azure Blob</block>
+  <block id="32aae8f84d3fb43aff2913dafe7d72e0" category="paragraph">當您建立以Azure Blob為目標的同步關係時Cloud Sync 、現在可讓您將標記複製到Azure Blob容器：</block>
+  <block id="718cef647cf171d07e94f6c003056c56" category="list-text">在*設定*頁面上、您可以使用*複製物件*設定、將標記從來源複製到Azure Blob容器。這是複製中繼資料的附加功能。</block>
+  <block id="37e1492974d1c0a4febae33433a14d3f" category="list-text">在「*標記/中繼資料*」頁面上、您可以指定要在複製到Azure Blob容器的物件上設定的Blob索引標籤。先前只能指定關係中繼資料。</block>
+  <block id="bb775e1249cce6f8004e5212d3f37d10" category="paragraph">當Azure Blob為目標、且來源為Azure Blob或S3相容端點（S3、StorageGRID 候選或IBM Cloud Object Storage）時、便支援這些選項。</block>
+  <block id="6e272326d37ff30b30c39df1796c1047" category="list-text">持續同步</block>
+  <block id="8ed3a39cc9f2a70ec95bb16dd2f2fb23" category="list-text">初始資料同步之後Cloud Sync 、Syncset會偵聽來源S3儲存區的變更、並在目標發生時持續同步任何變更。不需要以排定的時間間隔重新掃描來源。</block>
+  <block id="81e275e8d051ed5b97b6b40caeb6e335" category="paragraph">此設定僅適用於建立同步關係、以及當您從S3儲存區同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 更新版本或IBM Storage時。</block>
+  <block id="2be3dcdda5218111239a3d0174add0a9" category="paragraph">如果啟用此設定、則會影響其他功能、如下所示：</block>
+  <block id="cf6e8568cffe2257079f8cf83e628dad" category="list-text">同步排程已停用。</block>
+  <block id="ff156b37c42c21d99850e977fcdb1ebd" category="list-text">下列設定會還原為預設值：同步逾時、最近修改的檔案及修改日期。</block>
+  <block id="f60a1149c02808459c5643cc5df3f925" category="list-text">依大小篩選只會在複本事件上作用（而非刪除事件）。</block>
+  <block id="06188761055a99a60d4ecac698ce5c29" category="list-text">建立關係之後、您只能加速或刪除關係。您無法中止同步、修改設定或檢視報告。</block>
+  <block id="471d3dbea565333e7aac2e693d15e28e" category="paragraph">支援複製標記的同步關係包括Azure Blob或S3相容端點（S3、StorageGRID 支援、或IBM Cloud Object Storage）作為目標。</block>
+  <block id="19656389ea4b802da6413eff0a250187" category="inline-link-macro">建立同步關係時、請啟用「複製物件」設定</block>
+  <block id="89176f15cb099a09a71af33d00c1d7b5" category="paragraph">您必須在這些同步關係中 <block ref="a7dd81f666bee66d77494e96987d22b4" category="inline-link-macro-rx"></block>。</block>
 </blocks>

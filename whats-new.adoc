@@ -18,6 +18,49 @@ summary: 瞭Cloud Sync 解更新功能。
 
 
 
+== 2022年6月6日
+
+
+
+=== 持續同步
+
+新設定可讓您持續將來源S3儲存區的變更同步至目標。
+
+初始資料同步之後Cloud Sync 、Syncset會偵聽來源S3儲存區的變更、並在目標發生時持續同步任何變更。不需要以排定的時間間隔重新掃描來源。此設定僅適用於從S3儲存區同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 不支援或IBM Storage的情況。
+
+請注意、與您的資料代理人相關聯的IAM角色需要下列權限才能使用此設定：
+
+[source, json]
+----
+"s3:GetBucketNotification",
+"s3:PutBucketNotification"
+----
+這些權限會自動新增至您所建立的任何新資料代理人。
+
+link:task-creating-relationships.html#settings["深入瞭解Continuous Sync設定"]。
+
+
+
+=== 顯示所有ONTAP 的資料
+
+當您建立同步關係時Cloud Sync 、目前的功能就是在來源Cloud Volumes ONTAP 的支援系統上顯示所有Volume、內部部署ONTAP 的支援服務、或是在支援ONTAP 該功能的FSX檔案系統上顯示所有Volume。
+
+先前Cloud Sync 、僅顯示符合所選傳輸協定的磁碟區。現在所有的磁碟區都會顯示、但不符合所選傳輸協定或沒有共用區或匯出的任何磁碟區都會呈現灰色、而且無法選取。
+
+
+
+=== 將標記複製到Azure Blob
+
+當您建立以Azure Blob為目標的同步關係時Cloud Sync 、現在可讓您將標記複製到Azure Blob容器：
+
+* 在*設定*頁面上、您可以使用*複製物件*設定、將標記從來源複製到Azure Blob容器。這是複製中繼資料的附加功能。
+* 在「*標記/中繼資料*」頁面上、您可以指定要在複製到Azure Blob容器的物件上設定的Blob索引標籤。先前只能指定關係中繼資料。
+
+
+當Azure Blob為目標、且來源為Azure Blob或S3相容端點（S3、StorageGRID 候選或IBM Cloud Object Storage）時、便支援這些選項。
+
+
+
 == 2022年5月1日
 
 

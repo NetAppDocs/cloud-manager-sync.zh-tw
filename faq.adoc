@@ -299,7 +299,7 @@ link:task-copying-acls.html["瞭解如何在 SMB 共用區之間複製 ACL"]。
 * IBM Cloud Object Storage -> IBM Cloud Object Storage
 
 
-您必須在這些同步關係中 link:task-creating-relationships.html["建立同步關係時啟用設定"]。
+您必須在這些同步關係中 link:task-creating-relationships.html["建立同步關係時、請啟用「複製物件」設定"]。
 
 
 
