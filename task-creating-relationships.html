@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/cloud-manager-sync/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-sync/task-creating-relationships.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-sync/task-creating-relationships.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-sync/task-creating-relationships.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-sync/task-creating-relationships.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/cloud-manager-sync/task-creating-relationships.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-sync/task-creating-relationships.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-sync/task-creating-relationships.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-sync/task-creating-relationships.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-sync/task-creating-relationships.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-sync/task-creating-relationships.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -360,8 +352,6 @@
         
         <a target="_blank" href="/zh-tw/cloud-manager-sync/pdfs/fullsite-sidebar/本文檔_Cloud_Sync.pdf" >
           <img src="/zh-tw/cloud-manager-sync/images/pdf.png" width="16" height="16"/>此文件網站（PDF 格式）</a>
-
-
 
 
 
@@ -638,10 +628,10 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        所有Cloud Manager文件
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-sync/index.html">
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/zh-tw/cloud-manager-family/"><img src="/zh-tw/cloud-manager-sync/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/cloud-manager-sync/index.html">
         文件Cloud Sync
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 版本資訊</div>
@@ -787,7 +777,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:06:17 +0000">05/03/2022</time>
+    <time datetime="2022-06-07 14:00:09 +0000">06/07/2022</time>
     
   
 
@@ -994,6 +984,36 @@
 <dd>
 <p>定義 Cloud Sync 在跳過檔案之前、應重試同步檔案的次數。</p>
 </dd>
+<dt class="hdlist1">持續同步</dt>
+<dd>
+<p>初始資料同步之後Cloud Sync 、Syncset會偵聽來源S3儲存區的變更、並在目標發生時持續同步任何變更。不需要以排定的時間間隔重新掃描來源。</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>此設定僅適用於建立同步關係、以及當您從S3儲存區同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 更新版本或IBM Storage時。</p>
+</div>
+<div class="paragraph">
+<p>如果啟用此設定、則會影響其他功能、如下所示：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>同步排程已停用。</p>
+</li>
+<li>
+<p>下列設定會還原為預設值：同步逾時、最近修改的檔案及修改日期。</p>
+</li>
+<li>
+<p>依大小篩選只會在複本事件上作用（而非刪除事件）。</p>
+</li>
+<li>
+<p>建立關係之後、您只能加速或刪除關係。您無法中止同步、修改設定或檢視報告。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</dd>
 <dt class="hdlist1">比較依據</dt>
 <dd>
 <p>選擇Cloud Sync 當判斷檔案或目錄是否已變更且應重新同步時、是否應比較某些屬性。</p>
@@ -1027,7 +1047,7 @@
 <p>建立關聯之後、您無法編輯此選項。</p>
 </div>
 <div class="paragraph">
-<p>支援複製標記的同步關係包括S3相容的端點（S3、StorageGRID S基 板或IBM Cloud Object Storage）。</p>
+<p>支援複製標記的同步關係包括Azure Blob或S3相容端點（S3、StorageGRID 支援、或IBM Cloud Object Storage）作為目標。</p>
 </div>
 <div class="paragraph">
 <p>下列任一端點之間的「雲端對雲端」關係均支援複製中繼資料：</p>
@@ -1320,4 +1340,5 @@ Your browser does not support the video tag.
     </script>
     <script src='/zh-tw/cloud-manager-sync/js/www-ntap.js'></script>
     <script src='/zh-tw/cloud-manager-sync/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/cloud-manager-sync/js/sidebar.js'></script>
   </body></html>
