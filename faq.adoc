@@ -78,7 +78,6 @@ NOTE: 不需再為其提供任何功能、Cloud Sync Cloud Volumes Service Azure
 
 請注意以下關於 Cloud Sync 在雲端外部使用功能的重點：
 
-* 若要進行內部部署同步、可透過 NetApp StorageGRID 推出私有 Amazon S3 儲存庫。
 * 資料代理人群組需要網際網路連線才能與Cloud Sync 該服務進行通訊。
 * 如果您不直接向 NetApp 購買授權、您將需要 AWS 或 Azure 帳戶來 Cloud Sync 支付 PAYGO 服務費用。
 
