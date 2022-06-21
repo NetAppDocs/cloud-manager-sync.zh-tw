@@ -301,10 +301,6 @@
   <block id="f3796c63e27caa7881ad0844ee9e9544" category="list-text">20 GB HDD PD-Standard</block>
   <block id="1eba71d64e6c5e410e558530711e835b" category="summary">已知限制指出本產品版本不支援的平台、裝置或功能、或是無法與產品正確互通的平台、裝置或功能。請仔細檢閱這些限制。</block>
   <block id="e646e16bee8b32e6ea29e30d01970a6c" category="doc">限制</block>
-  <block id="d00599d1e32bdf0c309c42b0ff1535ba" category="list-text">中國不支援此功能。 Cloud Sync</block>
-  <block id="bbfde100f15ce21347e3f27b98fa179d" category="list-text">除了中國以外、 Cloud Sync 下列地區不支援 The Sun 的資料代理程式：</block>
-  <block id="28973d06f414ecd2b8aadf8888439345" category="list-text">Azure US Gov</block>
-  <block id="f216d6b6f01f8c6bb55a0365652582d1" category="list-text">Azure US DoD</block>
   <block id="5e4e330a68fd5b85b32d86b44717f091" category="summary">當您建立需要 Amazon S3 、 Azure 或 Google Cloud 認證的同步關係時、必須透過 Cloud Sync 「支援」使用者介面或 API 來指定這些認證資料。另一種方法是設定資料代理程式、以便直接從外部 HashiCorp Vault 存取認證資料。</block>
   <block id="34a36f0a41c390743b7c28311304c570" category="doc">設定資料代理群組以使用外部HashiCorp Vault</block>
   <block id="9e65ec8942093c6a71fdf631e8dfb695" category="paragraph">當您建立需要 Amazon S3 、 Azure 或 Google Cloud 認證的同步關係時、必須透過 Cloud Sync 「支援」使用者介面或 API 來指定這些認證資料。另一種方法是設定資料代理人群組、以便直接從外部HashiCorp Vault存取認證（或_h秘密_）。</block>
@@ -982,7 +978,6 @@
   <block id="d48011c59919ad7d6dbbbfd7b93b8a1d" category="section-title">我可以在 Cloud Sync 雲端以外使用這個功能嗎？</block>
   <block id="21257847b1628900e37090da9e642da2" category="paragraph">是的、 Cloud Sync 您可以在非雲端架構中使用來源和目標可以駐留在內部部署、資料代理軟體也可以駐留在內部。</block>
   <block id="cf2134fa111a18f1f2949af03a0b455d" category="paragraph">請注意以下關於 Cloud Sync 在雲端外部使用功能的重點：</block>
-  <block id="4cf11257ca11f0b945f9be6ea331b17b" category="list-text">若要進行內部部署同步、可透過 NetApp StorageGRID 推出私有 Amazon S3 儲存庫。</block>
   <block id="3339dd709817535785aeeda3c3be6158" category="list-text">資料代理人群組需要網際網路連線才能與Cloud Sync 該服務進行通訊。</block>
   <block id="ad12207f179d2ca16295cab50ab877b3" category="list-text">如果您不直接向 NetApp 購買授權、您將需要 AWS 或 Azure 帳戶來 Cloud Sync 支付 PAYGO 服務費用。</block>
   <block id="df266df003e70d370ab8d285c9cb2c42" category="section-title">我該如何存取 Cloud Sync 才能存取的問題？</block>
@@ -1507,4 +1502,8 @@
   <block id="471d3dbea565333e7aac2e693d15e28e" category="paragraph">支援複製標記的同步關係包括Azure Blob或S3相容端點（S3、StorageGRID 支援、或IBM Cloud Object Storage）作為目標。</block>
   <block id="19656389ea4b802da6413eff0a250187" category="inline-link-macro">建立同步關係時、請啟用「複製物件」設定</block>
   <block id="89176f15cb099a09a71af33d00c1d7b5" category="paragraph">您必須在這些同步關係中 <block ref="a7dd81f666bee66d77494e96987d22b4" category="inline-link-macro-rx"></block>。</block>
+  <block id="1a480358118349316f6eb18b57ab7ff1" category="paragraph">下列地區不支援此功能：Cloud Sync</block>
+  <block id="16bfbdd0b4d440a858cdccf55f911337" category="list-text">AWS政府區域</block>
+  <block id="580e905670d084cfe8e8e4ce2cd2899b" category="list-text">Azure政府區域</block>
+  <block id="ae54a5c026f31ada088992587d92cb3a" category="list-text">中國</block>
 </blocks>

@@ -16,11 +16,9 @@ summary: 已知限制指出本產品版本不支援的平台、裝置或功能�
 [role="lead"]
 已知限制指出本產品版本不支援的平台、裝置或功能、或是無法與產品正確互通的平台、裝置或功能。請仔細檢閱這些限制。
 
-* 中國不支援此功能。 Cloud Sync
-* 除了中國以外、 Cloud Sync 下列地區不支援 The Sun 的資料代理程式：
-+
-** Azure US Gov
-** Azure US DoD
+下列地區不支援此功能：Cloud Sync
 
-
+* AWS政府區域
+* Azure政府區域
+* 中國
 
