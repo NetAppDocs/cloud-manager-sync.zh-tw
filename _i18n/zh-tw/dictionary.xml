@@ -735,7 +735,6 @@
   <block id="50abff7eab122064034a22ce7ec10c49" category="list-text">智慧分層</block>
   <block id="7a1255ccd32375deedb79fe52eed93f5" category="list-text">標準非常用存取</block>
   <block id="e2b0c2a0a664cef2184b3d17808db4ce" category="list-text">單一區域不常用存取</block>
-  <block id="4def2a084469f97f6372bfaf0823941b" category="list-text">冰川</block>
   <block id="d2f79b4db321be04fd1439394fb99d3c" category="list-text">Glacier Deep 歸檔</block>
   <block id="95e5c9b9a242ae01ebbab296e59e2a68" category="list-text">當Google Cloud Storage儲存桶成為目標時、您可以選擇特定的儲存類別：</block>
   <block id="b7313c752ca12081edfba2212c0cc2e4" category="summary">您可以立即同步資料、變更排程等、隨時管理同步關係。</block>
@@ -1506,4 +1505,5 @@
   <block id="16bfbdd0b4d440a858cdccf55f911337" category="list-text">AWS政府區域</block>
   <block id="580e905670d084cfe8e8e4ce2cd2899b" category="list-text">Azure政府區域</block>
   <block id="ae54a5c026f31ada088992587d92cb3a" category="list-text">中國</block>
+  <block id="cbe97248e70516b3413b9658af8e4825" category="list-text">Glacier彈性擷取</block>
 </blocks>

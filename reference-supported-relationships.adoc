@@ -301,8 +301,9 @@ summary: 利用此功能、您可以將資料從來源同步到目標。Cloud Sy
 ** 智慧分層
 ** 標準非常用存取
 ** 單一區域不常用存取
-** 冰川
 ** Glacier Deep 歸檔
+** Glacier彈性擷取
+** Glacier即時擷取
 
 
 . 當Google Cloud Storage儲存桶成為目標時、您可以選擇特定的儲存類別：

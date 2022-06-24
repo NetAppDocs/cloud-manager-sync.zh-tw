@@ -124,8 +124,9 @@ link:reference-requirements.html["深入瞭解同步需求"]。
 * 智慧分層
 * 標準非常用存取
 * 單一區域不常用存取
-* 冰川
 * Glacier Deep 歸檔
+* Glacier彈性擷取
+* Glacier即時擷取
 
 
 
