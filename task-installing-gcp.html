@@ -755,7 +755,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:06:17 +0000">05/03/2022</time>
+    <time datetime="2022-07-03 15:45:11 +0000">07/03/2022</time>
     
   
 
@@ -832,20 +832,31 @@
 - storage.buckets.get
 - storage.buckets.list
 - storage.objects.*
-- iam.serviceAccounts.signJwt</code></pre>
+- iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-sync/images/note.svg" alt="附註">
-</td>
-<td class="content">
-只有當您打算設定資料代理程式使用外部HashiCorp保存庫時、才需要iam.serviceAccounts.signJwt"權限。
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>附註：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>只有當您打算設定資料代理程式使用外部HashiCorp保存庫時、才需要iam.serviceAccounts.signJwt"權限。</p>
+</li>
+<li>
+<p>只有當您計畫啟用從Google Cloud Storage到另一個雲端儲存位置的同步關係上的「Continuous Sync」設定時、才需要「publSub.*」和「Storage.buckes.update」權限。 <a href="task-creating-relationships.html#settings">"深入瞭解Continuous Sync選項"</a>。</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -960,7 +971,7 @@
 <dl>
 <dt class="hdlist1">機器類型</dt>
 <dd>
-<p>N1-標準-4</p>
+<p>n2-Standard-4</p>
 </dd>
 <dt class="hdlist1">vCPU</dt>
 <dd>
