@@ -18,6 +18,64 @@ summary: 瞭Cloud Sync 解更新功能。
 
 
 
+== 2022年7月3日
+
+
+
+=== 支援Azure Data Lake Storage Gen2
+
+您現在可以將NFS伺服器或SMB伺服器的資料同步至Azure Data Lake Storage Gen2。
+
+建立包含Azure Data Lake的同步關係時、您需要提供Cloud Sync 含有儲存帳戶連線字串的功能。它必須是一般連線字串、而非共用存取簽章（SAS）。
+
+link:reference-supported-relationships.html["檢視支援的同步關係清單"]。
+
+
+
+=== 從Google Cloud Storage持續同步
+
+持續同步設定現在可從來源Google Cloud Storage儲存庫支援至雲端儲存目標。
+
+初始資料同步之後Cloud Sync 、Syncset會偵聽來源Google Cloud Storage儲存區的變更、並在目標發生時持續同步任何變更。此設定適用於從Google Cloud Storage儲存庫同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 不支援或IBM Storage的情況。
+
+與您的資料代理人相關聯的服務帳戶需要下列權限才能使用此設定：
+
+[source, json]
+----
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
+----
+link:task-creating-relationships.html#settings["深入瞭解Continuous Sync設定"]。
+
+
+
+=== 新的Google Cloud區域支援
+
+下列Google Cloud地區現在支援此功能：Cloud Sync
+
+* 哥倫布（美國東部5）
+* 達拉斯（美國-南1）
+* 馬德里（歐洲-西南1）
+* 米蘭（歐洲-西8）
+* 巴黎（歐洲-西9）
+
+
+
+
+=== 全新Google Cloud機器類型
+
+Google Cloud中資料代理程式的預設機器類型現在是n2-Standard-4。
+
+
+
 == 2022年6月6日
 
 

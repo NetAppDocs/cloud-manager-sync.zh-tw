@@ -67,9 +67,22 @@ summary: 建立新的資料代理程式時、請選擇Google Cloud Data Broker�
 - storage.buckets.list
 - storage.objects.*
 - iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
 ----
+附註：
 
-NOTE: 只有當您打算設定資料代理程式使用外部HashiCorp保存庫時、才需要iam.serviceAccounts.signJwt"權限。
+. 只有當您打算設定資料代理程式使用外部HashiCorp保存庫時、才需要iam.serviceAccounts.signJwt"權限。
+. 只有當您計畫啟用從Google Cloud Storage到另一個雲端儲存位置的同步關係上的「Continuous Sync」設定時、才需要「publSub.*」和「Storage.buckes.update」權限。 link:task-creating-relationships.html#settings["深入瞭解Continuous Sync選項"]。
+
 
 
 
@@ -136,7 +149,7 @@ image:screenshot_data_broker_gcp.png["快照顯示在 Google Cloud 中部署資�
 
 使用下列組態、在Google Cloud中建立資料代理程式。Cloud Sync
 
-機器類型:: N1-標準-4
+機器類型:: n2-Standard-4
 vCPU:: 4.
 RAM:: 15 GB
 作業系統:: Red Hat Enterprise Linux 7.7

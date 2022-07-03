@@ -290,7 +290,6 @@
   <block id="9177317d32a41a0982be70109425240b" category="section-title">資料代理VM執行個體的詳細資料</block>
   <block id="c233ea2db8aa00ac96e4e0317d97f7ed" category="paragraph">使用下列組態、在Google Cloud中建立資料代理程式。Cloud Sync</block>
   <block id="3ea4bf9da7622edeeae1bf80e9c5cded" category="list-text">機器類型</block>
-  <block id="cc5a0182c13643bf47b7fb87ac22c232" category="list-text">N1-標準-4</block>
   <block id="ce3dfaedf282c19c5710c3e4b7302a4e" category="list-text">vCPU</block>
   <block id="a87ff679a2f3e71d9181a67b7542122c" category="list-text">4.</block>
   <block id="e53619c1fe611a51eeeb8d148ba6e532" category="list-text">RAM</block>
@@ -1491,12 +1490,9 @@
   <block id="37e1492974d1c0a4febae33433a14d3f" category="list-text">在「*標記/中繼資料*」頁面上、您可以指定要在複製到Azure Blob容器的物件上設定的Blob索引標籤。先前只能指定關係中繼資料。</block>
   <block id="bb775e1249cce6f8004e5212d3f37d10" category="paragraph">當Azure Blob為目標、且來源為Azure Blob或S3相容端點（S3、StorageGRID 候選或IBM Cloud Object Storage）時、便支援這些選項。</block>
   <block id="6e272326d37ff30b30c39df1796c1047" category="list-text">持續同步</block>
-  <block id="8ed3a39cc9f2a70ec95bb16dd2f2fb23" category="list-text">初始資料同步之後Cloud Sync 、Syncset會偵聽來源S3儲存區的變更、並在目標發生時持續同步任何變更。不需要以排定的時間間隔重新掃描來源。</block>
-  <block id="81e275e8d051ed5b97b6b40caeb6e335" category="paragraph">此設定僅適用於建立同步關係、以及當您從S3儲存區同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 更新版本或IBM Storage時。</block>
   <block id="2be3dcdda5218111239a3d0174add0a9" category="paragraph">如果啟用此設定、則會影響其他功能、如下所示：</block>
   <block id="cf6e8568cffe2257079f8cf83e628dad" category="list-text">同步排程已停用。</block>
   <block id="ff156b37c42c21d99850e977fcdb1ebd" category="list-text">下列設定會還原為預設值：同步逾時、最近修改的檔案及修改日期。</block>
-  <block id="f60a1149c02808459c5643cc5df3f925" category="list-text">依大小篩選只會在複本事件上作用（而非刪除事件）。</block>
   <block id="06188761055a99a60d4ecac698ce5c29" category="list-text">建立關係之後、您只能加速或刪除關係。您無法中止同步、修改設定或檢視報告。</block>
   <block id="471d3dbea565333e7aac2e693d15e28e" category="paragraph">支援複製標記的同步關係包括Azure Blob或S3相容端點（S3、StorageGRID 支援、或IBM Cloud Object Storage）作為目標。</block>
   <block id="19656389ea4b802da6413eff0a250187" category="inline-link-macro">建立同步關係時、請啟用「複製物件」設定</block>
@@ -1506,4 +1502,28 @@
   <block id="580e905670d084cfe8e8e4ce2cd2899b" category="list-text">Azure政府區域</block>
   <block id="ae54a5c026f31ada088992587d92cb3a" category="list-text">中國</block>
   <block id="cbe97248e70516b3413b9658af8e4825" category="list-text">Glacier彈性擷取</block>
+  <block id="1511b856d0328cfba458b8f83c2e94e3" category="section-title">2022年7月3日</block>
+  <block id="59db2d8d08645826b1c034be277c61d2" category="section-title">支援Azure Data Lake Storage Gen2</block>
+  <block id="c7b46a2bde58e21272436d4c94238e15" category="paragraph">您現在可以將NFS伺服器或SMB伺服器的資料同步至Azure Data Lake Storage Gen2。</block>
+  <block id="20a2ab980685308347c082aec3253ed9" category="paragraph">建立包含Azure Data Lake的同步關係時、您需要提供Cloud Sync 含有儲存帳戶連線字串的功能。它必須是一般連線字串、而非共用存取簽章（SAS）。</block>
+  <block id="ebf5fe0ded517668f74c4f41da278835" category="section-title">從Google Cloud Storage持續同步</block>
+  <block id="6ce39114bc116067ef30366e7df90870" category="paragraph">持續同步設定現在可從來源Google Cloud Storage儲存庫支援至雲端儲存目標。</block>
+  <block id="fd36af2b64264c3f7fb77364a0046eb8" category="paragraph">初始資料同步之後Cloud Sync 、Syncset會偵聽來源Google Cloud Storage儲存區的變更、並在目標發生時持續同步任何變更。此設定適用於從Google Cloud Storage儲存庫同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 不支援或IBM Storage的情況。</block>
+  <block id="5f5f25c6813ee0b01f552cd13dcebec9" category="paragraph">與您的資料代理人相關聯的服務帳戶需要下列權限才能使用此設定：</block>
+  <block id="81ad4f0de90ee8a7305d0fd7751df796" category="section-title">新的Google Cloud區域支援</block>
+  <block id="d38ece9df5f99d11a5e7597c6f6c34f2" category="paragraph">下列Google Cloud地區現在支援此功能：Cloud Sync</block>
+  <block id="db760e7471192daa123eed31bfba312d" category="list-text">哥倫布（美國東部5）</block>
+  <block id="ad6033c8e4eda00017eca167a149ced4" category="list-text">達拉斯（美國-南1）</block>
+  <block id="82e8338c73d6540f48f2e0cc8d035511" category="list-text">馬德里（歐洲-西南1）</block>
+  <block id="4b14bbd178377e932c7e97664c276be7" category="list-text">米蘭（歐洲-西8）</block>
+  <block id="1a1145c860165dcd96b82eb7d32cd59f" category="list-text">巴黎（歐洲-西9）</block>
+  <block id="66c941bf286fd505b009d484ca94a594" category="section-title">全新Google Cloud機器類型</block>
+  <block id="32ddf7d830e3a5092074c4f9bb211736" category="paragraph">Google Cloud中資料代理程式的預設機器類型現在是n2-Standard-4。</block>
+  <block id="80b8bec2e4ce95cb7a2f98a49ff8964c" category="list-text">初始資料同步之後Cloud Sync 、Syncset會偵聽來源S3儲存區或Google Cloud Storage儲存區的變更、並在目標發生時持續同步任何變更。不需要以排定的時間間隔重新掃描來源。</block>
+  <block id="f3705b49b8b44367d9a208662d64b1e0" category="paragraph">此設定僅適用於建立同步關係、以及從S3儲存區或Google Cloud Storage同步至S3、Google Cloud Storage、Azure Blob儲存設備、StorageGRID 不支援更新或IBM儲存設備時。</block>
+  <block id="ae067a0352a2b892590442ce8932ed20" category="list-text">如果S3為來源、則依大小篩選只會在複製事件上作用（而非刪除事件）。</block>
+  <block id="218f5307b8ee8bb2d446b8572cd40e9f" category="list-text">Azure Data Lake儲存設備第2代</block>
+  <block id="e83655905b13c4a3bc8d7de2a55ecea8" category="inline-link-macro">深入瞭解Continuous Sync選項</block>
+  <block id="3fb0e4028062069b21887e1408a76464" category="list-text">只有當您計畫啟用從Google Cloud Storage到另一個雲端儲存位置的同步關係上的「Continuous Sync」設定時、才需要「publSub.*」和「Storage.buckes.update」權限。 <block ref="5354423db3737fe63814ca7ea57f2c4c" category="inline-link-macro-rx"></block>。</block>
+  <block id="88ba83f191bd27de24492d3f347d8add" category="list-text">n2-Standard-4</block>
 </blocks>

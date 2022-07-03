@@ -204,6 +204,7 @@ summary: 利用此功能、您可以將資料從來源同步到目標。Cloud Sy
 * Amazon FSX for ONTAP Sf
 * Amazon S3
 * Azure Blob
+* Azure Data Lake儲存設備第2代
 * Azure NetApp Files
 * Cloud Volumes ONTAP
 * Cloud Volumes Service
@@ -252,6 +253,7 @@ summary: 利用此功能、您可以將資料從來源同步到目標。Cloud Sy
 * Amazon FSX for ONTAP Sf
 * Amazon S3
 * Azure Blob
+* Azure Data Lake儲存設備第2代
 * Azure NetApp Files
 * Cloud Volumes ONTAP
 * Cloud Volumes Service

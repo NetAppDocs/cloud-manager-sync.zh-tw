@@ -49,6 +49,7 @@ NetApp 資料代理軟體會將資料從來源同步至目標（這稱為 _sync 
 * Amazon FSX for ONTAP Sf
 * Amazon S3
 * Azure Blob
+* Azure Data Lake儲存設備第2代
 * Azure NetApp Files
 * Box（可預覽）
 * Cloud Volumes Service

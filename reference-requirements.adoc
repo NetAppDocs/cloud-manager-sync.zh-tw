@@ -139,6 +139,12 @@ image:screenshot_connection_string_sas.gif["顯示共享存取簽名、可從 Az
 
 
 
+== Azure Data Lake儲存設備第2代
+
+建立包含Azure Data Lake的同步關係時、您需要提供Cloud Sync 含有儲存帳戶連線字串的功能。它必須是一般連線字串、而非共用存取簽章（SAS）。
+
+
+
 == 需求 Azure NetApp Files
 
 在 Azure NetApp Files 將資料同步至或從支援中心同步時、請使用 Premium 或 Ultra 服務層級。如果磁碟服務層級為「 Standard （標準）」、您可能會遇到故障和效能問題。
